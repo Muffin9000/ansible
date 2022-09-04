@@ -1,0 +1,12 @@
+---
+- hosts: all
+  gather_facts: yes
+
+  tasks:
+    - name: ping Linux hosts
+      ping:
+      when: ansible_system == "Linux"
+
+    - name: ping Windows hosts
+      win_ping:
+      when: ansible_system == "Win32NT"

@@ -1,0 +1,34 @@
+---
+- hosts: '{{ host_group }}'
+  gather_facts: no
+
+  tasks:
+    - name: install IIS
+      win_feature:
+        name: web-server
+        include_management_tools: yes
+        include_sub_features: yes
+        state: present
+
+    - name: copy index.html
+      win_copy:
+        src: index.html
+        dest: C:\inetpub\wwwroot\index.html
+        force: yes # to override
+
+    - name: create logs
+      win_file:
+        path: c:\logs
+        state: directory
+
+    - name: install net core
+      win_chocolatey:
+        name: 'dotnetcore-windowshosting'
+        version: '3.1.0'
+        install_args: 'OPT_NO_RUNTIME=1 OPT_NOSHAREDFX=1 OPT_NO_X86=1 OPT_NO_SHARED_CONFIG_CHECK=1'
+        state: present
+      notify: restart IIS
+
+  handlers:
+    - name: restart IIS
+      win_shell: '& {iisreset}'
