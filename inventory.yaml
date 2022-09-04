@@ -7,3 +7,5 @@ all:
     linux:
       hosts:
         ec2-54-226-92-50.compute-1.amazonaws.com:
+      vars:
+        ansible_user: ansible
