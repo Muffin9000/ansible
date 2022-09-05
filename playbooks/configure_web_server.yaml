@@ -1,5 +1,5 @@
 ---
-- hosts: '{{ host_group }}'
+- hosts: linux
   gather_facts: no
   become: yes
 
@@ -12,7 +12,7 @@
 
     - name: copy index.html
       copy:
-        src: /ansible/playbooks/files/index.html
+        src: /ansible/ansible/playbooks/files/index.html
         dest: /usr/share/nginx/html/index.html
 
     - name: start nginx

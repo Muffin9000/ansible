@@ -1,5 +1,5 @@
 ---
-- hosts: '{{ host_group }}'
+- hosts: windows
   gather_facts: no
 
   tasks:
