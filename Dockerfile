@@ -3,7 +3,8 @@ FROM centos:7
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
-RUN cp /etc/skel/. /ansible; \
+RUN mkdir /ansible; \
+    cp /etc/skel/. /ansible; \
     groupadd ansible; \
     useradd -g ansible -G wheel,users -s /bin/bash -m -d /ansible -k /etc/skel ansible; \
     chown -R ansible:ansible /ansible/ 
