@@ -25,6 +25,6 @@ RUN pip3 install "ansible==2.9.12"; \
 
 RUN ls -la /ansible
 
-COPY /ansible/ansible/entrypoint.sh /entrypoint.sh
+COPY /home/runner/work/ansible/ansible/entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["bash","/entrypoint.sh"]
 
