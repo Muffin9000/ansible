@@ -23,8 +23,8 @@ RUN pip3 install "ansible==2.9.12"; \
     pip3 install boto3; \
     pip3 install "pywinrm>=0.3.0";
 
-RUN pwd
+RUN ls -la
 
-COPY /ansible/ansible/entrypoint.sh /entrypoint.sh
+COPY ansible/entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["bash","/entrypoint.sh"]
 
