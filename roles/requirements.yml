@@ -2,3 +2,8 @@
   scm: git
   version: 'v1.0'
   name: chocolatey
+
+- src:
+  scm: git
+  version: 'v1.3.0'
+  name: chocolatey-ansible
