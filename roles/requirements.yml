@@ -1,5 +1,4 @@
-- src: git@github.com:Muffin9000/chocolatey.git
+- src: https://github.com/Muffin9000/chocolatey.git
   scm: git
-  version: "v1.0"
+  version: 'v1.0'
   name: chocolatey
-  
