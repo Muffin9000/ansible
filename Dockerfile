@@ -3,6 +3,8 @@ FROM centos:7
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
+RUN find . -type f -name entrypoint.sh 2> /dev/null
+
 RUN mkdir /ansible; \
     cp /etc/skel/. /ansible; \
     groupadd ansible; \
