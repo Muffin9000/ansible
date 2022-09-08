@@ -3,8 +3,6 @@ FROM centos:7
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
-RUN find . -type f -name entrypoint.sh 2> /dev/null
-
 RUN mkdir /ansible; \
     cp /etc/skel/. /ansible; \
     groupadd ansible; \
@@ -28,5 +26,5 @@ RUN pip3 install "ansible==2.9.12"; \
 RUN cd ansible ; ls -la
 
 #COPY /home/runner/work/ansible/ansible/entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["bash","/ansible/entrypoint.sh"]
+ENTRYPOINT ["bash","./entrypoint.sh"]
 
