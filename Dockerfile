@@ -13,7 +13,7 @@ RUN  yum check-update; \
     yum install -y gcc libffi-devel python3 epel-release; \
     yum install -y openssh-clients; \
     yum install -y sshpass; \
-    yum install git; \
+    yum install -y git; \
     yum clean all; \
     pip3 install --upgrade pip;
 
@@ -23,8 +23,5 @@ RUN pip3 install "ansible==2.9.12"; \
     pip3 install boto3; \
     pip3 install "pywinrm>=0.3.0";
 
-RUN cd ansible ; ls -la
-
 #COPY /home/runner/work/ansible/ansible/entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["bash","./entrypoint.sh"]
-
