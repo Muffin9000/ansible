@@ -6,6 +6,4 @@ all:
         ec2-44-205-221-219.compute-1.amazonaws.com:
     linux:
       hosts:
-        ec2-54-226-92-50.compute-1.amazonaws.com:
-      vars:
-        ansible_user: ansible
+        ansible@ec2-54-226-92-50.compute-1.amazonaws.com:
